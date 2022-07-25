@@ -1,4 +1,4 @@
-package br.com.zup.acelera.exception;
+package com.zup.acelera.exception;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

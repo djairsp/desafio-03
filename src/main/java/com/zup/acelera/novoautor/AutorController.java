@@ -1,6 +1,6 @@
-package br.com.zup.acelera.novoautor;
+package com.zup.acelera.novoautor;
 
-import br.com.zup.acelera.model.Autor;
+import com.zup.acelera.model.Autor;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 

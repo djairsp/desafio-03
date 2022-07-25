@@ -1,4 +1,4 @@
-package br.com.zup.acelera.exception;
+package com.zup.acelera.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     private static final long serialVersionUID = 1L;

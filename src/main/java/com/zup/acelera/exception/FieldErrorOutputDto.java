@@ -1,4 +1,4 @@
-package br.com.zup.acelera.exception;
+package com.zup.acelera.exception;
 
 public class FieldErrorOutputDto {
 
