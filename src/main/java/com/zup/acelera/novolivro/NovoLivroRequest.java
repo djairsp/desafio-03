@@ -1,4 +1,4 @@
-package com.zup.acelera.novotitulo;
+package com.zup.acelera.novolivro;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -35,7 +35,11 @@ public class NovoLivroRequest {
     @NotNull
     @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate dataPublicacao;
+    @NotNull
+    //@ExistId(domainClass = Categoria.class, fieldName = " ")
     private Long idCategoria;
+    @NotNull
+    //@ExistId(domainClass = Autor.class, fieldName = " ")
     private Long idAutor;
 
     public NovoLivroRequest(@NotBlank String titulo,
