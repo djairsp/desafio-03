@@ -41,8 +41,7 @@ public class LivroController {
             return ResponseEntity.notFound().build();
         }
         HashMap<Long, String> listaLivros = new HashMap<>();
-        listaLivros.put(1l, "teste");
-        livros.stream().map(livro -> listaLivros.put(livro.getId(), livro.getTitulo()));
+        livros.forEach( livro -> listaLivros.put(livro.getId(), livro.getTitulo()));
 
         return ResponseEntity.ok(listaLivros);
     }
