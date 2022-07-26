@@ -40,9 +40,7 @@ public class LivroController {
         if(livros.isEmpty()){
             return ResponseEntity.notFound().build();
         }
-        HashMap<Long, String> listaLivros = new HashMap<>();
-        livros.forEach( livro -> listaLivros.put(livro.getId(), livro.getTitulo()));
 
-        return ResponseEntity.ok(listaLivros);
+        return ResponseEntity.ok(LivroDTO.converter(livros));
     }
 }
