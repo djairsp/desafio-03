@@ -1,7 +1,8 @@
-package com.zup.acelera.paisestado;
+package com.zup.acelera.novocliente;
 
-import com.zup.acelera.model.Estado;
-import com.zup.acelera.model.Pais;
+import com.zup.acelera.model.Cliente;
+import com.zup.acelera.repository.PaisRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,17 +15,20 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("estados")
-public class NovoEstadoController {
+@RequestMapping("clientes")
+public class NovoClienteController {
+
+    @Autowired
+    private PaisRepository paisRepository;
 
     @PersistenceContext
     private EntityManager manager;
 
     @PostMapping
     @Transactional
-    public ResponseEntity<?> criarEstado(@RequestBody @Valid NovoEstadoRequest request) {
-        Estado estado = request.toModel(manager);
-        manager.persist(estado);
-        return ResponseEntity.ok(estado);
+    public ResponseEntity<?> criarCliente(@RequestBody @Valid NovoClienteRequest request) {
+        Cliente cliente = request.toModel(paisRepository);
+        manager.persist(cliente);
+        return ResponseEntity.ok(cliente);
     }
 }

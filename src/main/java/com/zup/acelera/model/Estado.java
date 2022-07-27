@@ -30,4 +30,8 @@ public class Estado {
     public Pais getPais() {
         return pais;
     }
+
+    public Long getId() {
+        return id;
+    }
 }

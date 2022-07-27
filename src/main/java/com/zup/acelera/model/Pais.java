@@ -1,10 +1,8 @@
 package com.zup.acelera.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 public class Pais {
@@ -15,6 +13,9 @@ public class Pais {
     @NotBlank
     private String nome;
 
+    @OneToMany
+    private List<Estado> estados;
+
     @Deprecated
     public Pais() {}
 
@@ -24,5 +25,15 @@ public class Pais {
 
     public String getNome() {
         return nome;
+    }
+
+    public List<Estado> getEstados() {
+        return estados;
+    }
+
+    public Estado getEstadoByIdEstado(Long idEstado){
+        return this.estados.stream().filter(estado -> estado.getId().equals(idEstado))
+                .findAny()
+                .orElse(null);
     }
 }
