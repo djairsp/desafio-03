@@ -27,7 +27,7 @@ public class LivroController {
 
     @PostMapping
     @Transactional
-    public String novoLivor(@RequestBody @Valid NovoLivroRequest request){
+    public String novoLivro(@RequestBody @Valid NovoLivroRequest request){
         Livro novoLivro = request.toModel(entityManager);
         entityManager.persist(novoLivro);
         return novoLivro.toString();
